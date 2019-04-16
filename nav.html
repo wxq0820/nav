@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动与定位</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+        ul{
+            list-style: none;
+        }
+        nav>ul>li{
+            float: left;
+        }
+        ul>li:hover>a{
+            background-color: #eee;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding:0 20px;
+        }
+
+        nav{
+            width: 600px;
+            height: 40px;
+            line-height: 40px;
+            margin: 10px auto;
+            border: 1px solid #eee;
+            border-radius: 3px;
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+        }
+        .list{
+            display: none;
+            border: 1px solid #eee;
+            border-radius: 3px;
+        }
+        ul li:hover .list{
+            display: block;
+        }
+        .clearFix::after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul class="clearFix">
+        <li><a href="">首页</a></li>
+        <li><a href="">作品</a></li>
+        <li>
+            <a href="">更多</a>
+            <ul class="list">
+                <li><a href="#">html</a></li>
+                <li><a href="#">css</a></li>
+                <li><a href="#">javaScript</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>
